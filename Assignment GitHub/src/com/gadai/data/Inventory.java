@@ -19,7 +19,7 @@ public class Inventory {
 	}
 	
 	public static void printHeaderInventory() {
-        String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s | %-15s | %n";
+        String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s | %.2f | %n";
         printLine();
         System.out.format(leftAlignFormat, "ID", "Name", "Product", "Description", "Price");
         printLine();
@@ -31,7 +31,7 @@ public class Inventory {
 	
 	public void printRowInventory() {
         String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s |  %.2f | %n";
-        System.out.format(leftAlignFormat, id, name, productCategory, description, price, utang);
+        System.out.format(leftAlignFormat, id, name, productCategory, description, price);
     }
 	
 	public int getId() {
