@@ -39,10 +39,31 @@ public class Gadai {
 				name = input.nextLine();
 				stringLength = name.length();
 				if(stringLength >= 3 && stringLength <= 15) {
-					System.out.println("benerrr");
+					do {
+						try {
+							System.out.println("Product Category: ");
+							product = input.nextLine();
+						}catch(Exception e) {
+							input.next();
+							continue;
+						}
+					} while(!(product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")));
+					if (product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")) {
+						do {
+							System.out.println("get input for product");
+						} while("check inputan");
+						if ("check inputan") {
+							do {
+								System.out.println("get input for description");
+							}while(!(price % 10000 == 0 && price > 0));
+							if (price % 10000 == 0 && price > 0) {
+								System.out.println("get input for price");
+							}
+						}
+				}
 				}
 			}catch(Exception e){
-				
+			
 			}
 		}while(stringLength < 3 || stringLength > 15);
 	}
