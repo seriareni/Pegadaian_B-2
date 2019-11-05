@@ -63,6 +63,9 @@ public class PegadaianSystem {
 								if (newInventory.get(id-1).getUtang() == 0) {
 									newInventory.get(id-1).setStatus("Lunas");
 								}
+								Inventory.printHeaderTebus();
+								for (Inventory inventory : newInventory) inventory.printRowTebus();
+								Inventory.printLine();
 							}
 						}
 					}
