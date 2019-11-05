@@ -58,6 +58,12 @@ public class PegadaianSystem {
 								}
 							} while(biaya > newInventory.get(id-1).getUtang() || biaya <= 0);
 
+							if (biaya <= newInventory.get(id-1).getUtang()) {
+								newInventory.get(id-1).setUtang(newInventory.get(id-1).getUtang() - biaya);
+								if (newInventory.get(id-1).getUtang() == 0) {
+									newInventory.get(id-1).setStatus("Lunas");
+								}
+							}
 						}
 					}
 					catch (Exception e){
