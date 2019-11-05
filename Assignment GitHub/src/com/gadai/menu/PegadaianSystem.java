@@ -42,7 +42,30 @@ public class PegadaianSystem {
 				Inventory.printHeaderTebus();
 				for (Inventory inventory : newInventory) inventory.printRowTebus();
 				Inventory.printLine();
-				
+				do {
+					try {
+						System.out.println("Masukkan ID barang yang ingin di tebus : ");	
+						id = input.nextInt();
+						if (id <= itemCount && id > 0) {
+							do {
+								try {
+									System.out.println("Masukkan biaya yang ingin di tebus : ");	
+									biaya = input.nextDouble();
+								}
+								catch (Exception e){
+									input.next();
+									continue;
+								}
+							} while(biaya > newInventory.get(id-1).getUtang() || biaya <= 0);
+
+						}
+					}
+					catch (Exception e){
+						input.next();
+						continue;
+					}
+				} while(id > itemCount || id <= 0 );
+
 			} else if(menuNumber==3) {
 			} else if(menuNumber==4) {
 				System.out.println("Exit");
