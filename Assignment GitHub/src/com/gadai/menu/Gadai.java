@@ -70,11 +70,19 @@ public class Gadai {
 							}while(!(description.split(" ").length > 1));
 							if (description.split(" ").length > 1) {
 								do {
-									System.out.println("tolong dilanjutkan");
+									try {
+										System.out.println("Price: ");
+										price = input.nextDouble();
+									}catch(Exception e) {
+										input.next();
+										continue;
+									}
 								}	
 							while(!(price % 10000 == 0 && price > 0));
 							if (price % 10000 == 0 && price > 0) {
-								System.out.println("get input for price");
+								newInventory.add(new Inventory(newInventory.size()+1, name, product, description, "Gadai", price, price));
+								itemCount = newInventory.size();
+								this.itemCount = itemCount;
 							}
 						}
 					}
@@ -84,14 +92,6 @@ public class Gadai {
 			
 			}
 		}while(stringLength < 3 || stringLength > 15);
-	}
-
-	public Scanner getInput() {
-		return input;
-	}
-
-	public void setInput(Scanner input) {
-		this.input = input;
 	}
 
 	public int getCountID() {
@@ -109,62 +109,5 @@ public class Gadai {
 	public void setItemCount(int itemCount) {
 		this.itemCount = itemCount;
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public double getBiaya() {
-		return biaya;
-	}
-
-	public void setBiaya(double biaya) {
-		this.biaya = biaya;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getProduct() {
-		return product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public int getStringLength() {
-		return stringLength;
-	}
-
-	public void setStringLength(int stringLength) {
-		this.stringLength = stringLength;
-	}
-
 	
 }
