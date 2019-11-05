@@ -31,7 +31,7 @@ public class Inventory {
 	
 	public void printRowInventory() {
         String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s |  %.2f | %n";
-        System.out.format(leftAlignFormat, id, name, productCategory, description, price);
+        System.out.format(leftAlignFormat, id, name, productCategory, description, price, utang);
     }
 	
 	public int getId() {
