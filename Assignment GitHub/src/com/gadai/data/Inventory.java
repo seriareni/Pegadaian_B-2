@@ -1,19 +1,23 @@
 package com.gadai.data;
 
 public class Inventory {
+	int id;
 	String name;
 	String productCategory;
 	String description;
 	double price;
+	double utang;
 	
-	public Inventory(String name, String productCategory, String description, double price) {
+	public Inventory(int id, String name, String productCategory, String description, double price, double utang) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.productCategory = productCategory;
 		this.description = description;
 		this.price = price;
+		this.utang = utang;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
