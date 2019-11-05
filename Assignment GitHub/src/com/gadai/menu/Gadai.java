@@ -1,4 +1,5 @@
 package com.gadai.menu;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Gadai {
@@ -27,6 +28,23 @@ public class Gadai {
 		this.description = description;
 		this.price = price;
 		this.stringLength = stringLength;
+	}
+	
+	public Gadai(ArrayList newInventory, String name, int itemCount, String product, String description, double price, int stringLength) {
+		do {
+			try {
+				System.out.println("Detail Information");
+				System.out.println("==================");
+				System.out.println("Name: ");
+				name = input.nextLine();
+				stringLength = name.length();
+				if(stringLength >= 3 && stringLength <= 15) {
+					System.out.println("benerrr");
+				}
+			}catch(Exception e){
+				
+			}
+		}while(stringLength < 3 || stringLength > 15);
 	}
 
 	public Scanner getInput() {
