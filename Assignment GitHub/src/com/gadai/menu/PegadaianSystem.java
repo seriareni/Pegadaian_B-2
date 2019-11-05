@@ -37,6 +37,8 @@ public class PegadaianSystem {
 			menuNumber = input.nextInt();
 
 			if(menuNumber==1) {
+				Gadai gadai = new Gadai(newInventory, name, itemCount, product, description, price, stringLength);
+				itemCount = gadai.getItemCount();
 			} 
 			else if(menuNumber==2) {
 				Inventory.printHeaderTebus();
@@ -73,6 +75,11 @@ public class PegadaianSystem {
 				} while(id > itemCount || id <= 0 );
 
 			} else if(menuNumber==3) {
+				Inventory.printHeaderInventory();
+				for (Inventory inventory : newInventory) 
+					if (inventory.getStatus() != "Lunas")
+		        		inventory.printRowInventory();
+				Inventory.printLine();
 			} else if(menuNumber==4) {
 				System.out.println("Exit");
 			} else {

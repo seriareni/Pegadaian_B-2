@@ -38,10 +38,6 @@ public class Inventory {
         System.out.format(leftAlignFormat, id, productCategory, price, status, utang);
     }
 
-	public int getId() {
-		return id;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -52,10 +48,6 @@ public class Inventory {
         System.out.format(leftAlignFormat, "ID", "Name", "Product", "Description", "Price");
         printLine();
     }
-	
-	 public static void printLine() {
-	        System.out.format("---------------------------------------------------%n");
-	    }
 	
 	public void printRowInventory() {
         String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s |  %.2f | %n";
