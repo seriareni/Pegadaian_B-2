@@ -50,18 +50,36 @@ public class Gadai {
 					} while(!(product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")));
 					if (product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")) {
 						do {
-							System.out.println("get input for product");
-						} while("check inputan");
-						if ("check inputan") {
+							try {
+								System.out.println("Product Category: ");
+								product = input.nextLine();
+							}catch(Exception e) {
+								input.next();
+								continue;
+							}
+						} while(!(product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")));
+						if (product.equalsIgnoreCase("laptop") || product.equalsIgnoreCase("motor") || product.equalsIgnoreCase("emas")) {
 							do {
-								System.out.println("get input for description");
-							}while(!(price % 10000 == 0 && price > 0));
+								try {
+									System.out.println("Description: ");
+									description = input.nextLine();
+								}catch(Exception e) {
+									input.next();
+									continue;
+								}
+							}while(!(description.split(" ").length > 1));
+							if (description.split(" ").length > 1) {
+								do {
+									System.out.println("tolong dilanjutkan");
+								}	
+							while(!(price % 10000 == 0 && price > 0));
 							if (price % 10000 == 0 && price > 0) {
 								System.out.println("get input for price");
 							}
 						}
+					}
 				}
-				}
+			}
 			}catch(Exception e){
 			
 			}
