@@ -39,10 +39,22 @@ public class PegadaianSystem {
 			if(menuNumber==1) {
 			} 
 			else if(menuNumber==2) {
-			} 
-			else if(menuNumber==3) {
-			} 
-			else if(menuNumber==4) {
+				Inventory.printHeaderTebus();
+				for (Inventory inventory : newInventory) inventory.printRowTebus();
+				Inventory.printLine();
+				do {
+					try {
+						System.out.println("Masukkan ID barang yang ingin di tebus : ");	
+						id = input.nextInt();
+											}
+					catch (Exception e){
+						input.next();
+						continue;
+					}
+				} while(id > itemCount || id <= 0 );
+
+			} else if(menuNumber==3) {
+			} else if(menuNumber==4) {
 				System.out.println("Exit");
 			} else {
 				System.out.println("Menu Tidak Ada");
