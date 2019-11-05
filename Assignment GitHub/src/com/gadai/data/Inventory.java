@@ -18,6 +18,17 @@ public class Inventory {
 		this.utang = utang;
 	}
 	
+	public static void printHeaderInventory() {
+        String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s | %-15s | %n";
+        printLine();
+        System.out.format(leftAlignFormat, "ID", "Name", "Product", "Description", "Price");
+        printLine();
+    }
+	
+	 public static void printLine() {
+	        System.out.format("---------------------------------------------------%n");
+	    }
+	
 	public void printRowInventory() {
         String leftAlignFormat = "| %-15s | %-8s | %-10s | %-9s |  %.2f | %n";
         System.out.format(leftAlignFormat, id, name, productCategory, description, price);
